@@ -1,0 +1,147 @@
+:root {
+    box-sizing: border-box;
+    --white: #fff;
+    --red: hsl(0, 72%, 60%);
+    --red-dark: hsl(0, 72%, 50%);
+    --green: hsl(84, 81%, 70%);
+    --green-dark: hsl(84, 81%, 45%);
+    --grey: hsl(220, 14%, 96%);
+    --grey-dark: hsl(220, 14%, 85%);
+}
+
+body {
+    font-family: "Helvetica", "Arial", sans-serif;
+    display: grid;
+    grid-template: 2fr 16fr 1fr / 1fr 6fr;
+    grid-template-areas:
+    "sidebar header"
+    "sidebar content"
+    "footer footer";
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+button {
+    transition-duration: 0.4s;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    grid-area: header;
+    text-align: center;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.08), 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+}
+
+.content {
+    grid-area: content;
+    background-color: #f3f4f6;
+}
+
+.book-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 30px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    font-size: 1.25rem;
+    padding: 20px;
+    background-color: var(--white);
+    border: 2px solid lightgray;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.08), 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+    border-radius: 10px;
+}
+
+.card button {
+    font-size: 1.125rem;
+}
+
+.green {
+    background-color: var(--green);
+}
+.green:hover {
+    background-color: var(--green-dark);
+}
+
+.grey {
+    background-color: var(--grey);
+}
+.grey:hover {
+    background-color: var(--grey-dark);
+}
+
+.red {
+    background-color: var(--red);
+}
+.red:hover {
+    background-color: var(--red-dark);
+}
+
+.card button {
+    padding: 10px;
+    border-radius: 5px;
+    border: 0;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #0ea5e9;
+    grid-area: sidebar;
+    padding: 20px;
+}
+
+.sidebar .open-form-button {
+    flex: 0 1 50px;
+    border-radius: 10px;
+    color: var(--white);
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #1e293b;
+}
+
+.book-form {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    gap: 20px;
+    align-items: center;
+}
+
+.book-form-dialog {
+    padding: 50px;
+    border: 3px solid black;
+    border-radius: 5%;
+}
+
+.book-form-dialog::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.book-form h2 {
+    margin: 0;
+    padding: 0;
+}
+
+.book-form > * {
+    display: flex;
+    gap: 5px;
+}
+
+.book-form > * > input[type="number"],
+.book-form > * > input[type="text"] {
+    flex: 1;
+}
